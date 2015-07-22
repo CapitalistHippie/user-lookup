@@ -1,0 +1,33 @@
+#ifndef _MM_CONFIGURATION_PARSER_MM_CONFIGURATION_PARSER_H_
+#define _MM_CONFIGURATION_PARSER_MM_CONFIGURATION_PARSER_H_
+
+#ifdef MMCP_DLL_EXPORT
+#define MMCP_DLL_IMEXPORT __declspec(dllexport)
+#else
+#define MMCP_DLL_IMEXPORT __declspec(dllimport)
+#endif
+
+#include "configurationparser.h"
+#include "configurationparserexception.h"
+
+namespace mmcp
+{
+	enum ReturnCodes
+	{
+		MMCP_SUCCESS_DEFAULT_USED,
+		MMCP_SUCCESS_VALUE_FOUND,
+		MMCP_SUCCESS_VALUE_ADDED,
+		MMCP_SUCCESS_VALUE_SET
+	};
+
+	enum ErrorCodes
+	{
+		MMCP_CONFIGURATION_ALREADY_LOADED,
+		MMCP_INVALID_PARAMETERS,
+		MMCP_FILE_DOES_NOT_EXIST,
+		MMCP_NO_CONFIGURATION_LOADED,
+		MMCP_VALUE_NOT_FOUND
+	};
+}
+
+#endif // _MM_CONFIGURATION_PARSER_MM_CONFIGURATION_PARSER_H_
